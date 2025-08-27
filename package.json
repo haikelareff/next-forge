@@ -1,9 +1,7 @@
 {
-  "name": "next-forge",
+  "name": "hrev-dev",
   "version": "5.0.4",
-  "bin": {
-    "next-forge": "dist/index.js"
-  },
+  "bin": {},
   "files": [
     "dist/index.js"
   ],

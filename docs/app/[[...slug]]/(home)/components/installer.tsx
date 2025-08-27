@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { CopyIcon } from 'lucide-react';
 import { toast } from 'sonner';
 
-const command = 'npx next-forge@latest init';
+const command = 'npx create-next-app -e https://github.com/hrev-dev/agency';
 
 export const Installer = () => {
   const handleCopy = () => {

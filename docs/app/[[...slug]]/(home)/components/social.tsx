@@ -66,7 +66,7 @@ export const Social = () => (
       <div className="sticky top-14 grid gap-2 p-8">
         <h2 className="font-semibold text-4xl">Loved by the community</h2>
         <p className="text-muted-foreground">
-          See what people are saying about next-forge.
+          See what people are saying about Hrev Dev.
         </p>
       </div>
     </div>

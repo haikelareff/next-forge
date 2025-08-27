@@ -10,31 +10,12 @@ export const OpenSource = () => {
           <small>Open source</small>
         </div>
         <p className="font-semibold text-xl tracking-tight">
-          next-forge is 100% open source, provided by{' '}
-          <a
-            href="https://vercel.com"
-            className="text-primary underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vercel
-          </a>{' '}
-          and maintained by a community of developers. It was originally
-          developed by{' '}
-          <a
-            href="https://x.com/haydenbleasel"
-            className="text-primary underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Hayden Bleasel
-          </a>
-          .
+          Hrev Dev is 100% open source and maintained by our community of developers.
         </p>
       </div>
       <Button asChild variant="outline">
         <a
-          href="https://github.com/vercel/next-forge"
+          href="https://github.com/hrev-dev/agency"
           target="_blank"
           rel="noopener noreferrer"
         >
