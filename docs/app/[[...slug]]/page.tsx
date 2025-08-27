@@ -49,8 +49,8 @@ const Page = async (props: PageProps) => {
         collapsible: false,
         tabs: [
           {
-            title: 'Docs',
-            url: '/docs',
+            title: 'Guide',
+            url: '/guide',
           },
           {
             title: 'Apps',

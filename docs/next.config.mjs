@@ -24,6 +24,16 @@ const config = {
   redirects: async () => {
     return [
       {
+        source: '/docs',
+        destination: '/guide',
+        permanent: true,
+      },
+      {
+        source: '/docs/:path*',
+        destination: '/guide/:path*',
+        permanent: true,
+      },
+      {
         source: '/apps',
         destination: '/apps/api',
         permanent: true,

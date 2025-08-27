@@ -39,8 +39,8 @@ export const baseOptions: BaseLayoutProps = {
       url: '/',
     },
     {
-      text: 'Docs',
-      url: '/docs',
+      text: 'Guide',
+      url: '/guide',
     },
   ],
   nav: {
