@@ -51,33 +51,27 @@ const TurborepoLogo = (props: ComponentProps<'svg'>) => (
 export const Hero = () => (
   <section className="flex flex-col items-center justify-center gap-6 bg-dashed px-4 py-16 sm:px-16 sm:py-24">
     <a
-      href="https://x.com/haydenbleasel/status/1929625673586598148"
-      target="_blank"
+      href="/docs/ui-showcase"
       className="inline-flex overflow-hidden w-full sm:w-fit items-center gap-2 rounded-full border bg-background py-1 pr-3 pl-1 text-foreground text-sm leading-6 shadow-xs"
       rel="noreferrer"
     >
-      <span className="rounded-full bg-secondary px-2 font-semibold">
-        Update
-      </span>
-      <span className="font-medium truncate">
-        next-forge has been acquired by Vercel
-      </span>
+      <span className="rounded-full bg-secondary px-2 font-semibold">New</span>
+      <span className="font-medium truncate">Introducing Hrev UI — our shadcn/ui component library</span>
     </a>
     <h1 className="max-w-3xl text-balance text-center font-semibold text-4xl leading-tight tracking-tighter! sm:text-5xl md:max-w-4xl md:text-6xl lg:leading-[1.1]">
-      Production-grade{' '}
+      Hrev Dev — Expert{' '}
       <TurborepoLogo className="pointer-events-none mx-1.5 inline-block h-8 w-auto translate-y-0.5 select-none align-baseline sm:h-[38px] md:h-[48px] md:translate-y-1" />
-      Turborepo template for{' '}
+      Turborepo &{' '}
       <NextLogo className="pointer-events-none mx-1.5 inline-block h-8 w-auto translate-y-0.5 select-none align-baseline sm:h-[38px] md:h-[48px] md:translate-y-1 dark:invert" />
-      Next.js apps
+      Next.js agency
     </h1>
     <p className="max-w-xl text-balance text-center text-muted-foreground md:max-w-2xl md:text-lg">
-      A monorepo template designed to have everything you need to build your new
-      SaaS app as thoroughly as possible. Free and open source, forever.
+      We design, build, and scale modern web apps. Monorepo-first architecture, performance-driven UI, and production-grade DX.
     </p>
     <div className="mx-auto flex w-full max-w-lg flex-col items-center gap-4 sm:flex-row">
       <Installer />
       <Button asChild size="lg">
-        <Link href="/docs">Read the docs</Link>
+        <Link href="/docs">Explore our docs</Link>
       </Button>
     </div>
   </section>

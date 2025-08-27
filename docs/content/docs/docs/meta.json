@@ -4,6 +4,8 @@
   "pages": [
     "---Introduction---",
     "index",
+    "ui-showcase",
+    "pro-templates",
     "philosophy",
     "structure",
     "updates",

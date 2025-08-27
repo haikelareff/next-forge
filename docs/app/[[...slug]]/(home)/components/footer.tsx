@@ -2,25 +2,16 @@ export const Footer = () => (
   <div className="bg-dashed">
     <div className="container mx-auto flex items-center justify-between p-8 text-muted-foreground">
       <p className="mx-auto block text-center text-sm">
-        Built with love by{' '}
+        © {new Date().getFullYear()} Hrev Dev. Crafted with Next.js, Turborepo and shadcn/ui.{' '}
         <a
-          href="https://x.com/haydenbleasel"
+          href="https://github.com/hrev-dev/agency"
           target="_blank"
           rel="noopener noreferrer"
           className="text-foreground underline"
         >
-          Hayden Bleasel
+          View source
         </a>
-        . Maintained by a brilliant community of{' '}
-        <a
-          href="https://github.com/vercel/next-forge"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-foreground underline"
-        >
-          developers
-        </a>
-        .
+        . All rights reserved.
       </p>
     </div>
   </div>

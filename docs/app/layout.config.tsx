@@ -32,7 +32,7 @@ const Slash = () => (
 );
 
 export const baseOptions: BaseLayoutProps = {
-  githubUrl: 'https://github.com/vercel/next-forge',
+  githubUrl: 'https://github.com/hrev-dev/agency',
   links: [
     {
       text: 'Home',
@@ -48,7 +48,7 @@ export const baseOptions: BaseLayoutProps = {
       <div className="flex items-center gap-2">
         <Vercel />
         <Slash />
-        <p className="font-semibold text-lg tracking-tight">next-forge</p>
+        <p className="font-semibold text-lg tracking-tight">Hrev Dev</p>
       </div>
     ),
   },
