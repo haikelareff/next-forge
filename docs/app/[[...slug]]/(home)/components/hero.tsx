@@ -1,84 +1,135 @@
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import type { ComponentProps } from 'react';
-import { Installer } from './installer';
+import { ArrowRight, Sparkles, Code, Palette, Zap } from 'lucide-react';
 
-const NextLogo = (props: ComponentProps<'svg'>) => (
+const HrevLogo = (props: ComponentProps<'svg'>) => (
   <svg
-    viewBox=".5 -.2 1023 1024.1"
+    viewBox="0 0 100 100"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <title>Next.js</title>
-    <path d="m478.5.6c-2.2.2-9.2.9-15.5 1.4-145.3 13.1-281.4 91.5-367.6 212-48 67-78.7 143-90.3 223.5-4.1 28.1-4.6 36.4-4.6 74.5s.5 46.4 4.6 74.5c27.8 192.1 164.5 353.5 349.9 413.3 33.2 10.7 68.2 18 108 22.4 15.5 1.7 82.5 1.7 98 0 68.7-7.6 126.9-24.6 184.3-53.9 8.8-4.5 10.5-5.7 9.3-6.7-.8-.6-38.3-50.9-83.3-111.7l-81.8-110.5-102.5-151.7c-56.4-83.4-102.8-151.6-103.2-151.6-.4-.1-.8 67.3-1 149.6-.3 144.1-.4 149.9-2.2 153.3-2.6 4.9-4.6 6.9-8.8 9.1-3.2 1.6-6 1.9-21.1 1.9h-17.3l-4.6-2.9c-3-1.9-5.2-4.4-6.7-7.3l-2.1-4.5.2-200.5.3-200.6 3.1-3.9c1.6-2.1 5-4.8 7.4-6.1 4.1-2 5.7-2.2 23-2.2 20.4 0 23.8.8 29.1 6.6 1.5 1.6 57 85.2 123.4 185.9s157.2 238.2 201.8 305.7l81 122.7 4.1-2.7c36.3-23.6 74.7-57.2 105.1-92.2 64.7-74.3 106.4-164.9 120.4-261.5 4.1-28.1 4.6-36.4 4.6-74.5s-.5-46.4-4.6-74.5c-27.8-192.1-164.5-353.5-349.9-413.3-32.7-10.6-67.5-17.9-106.5-22.3-9.6-1-75.7-2.1-84-1.3zm209.4 309.4c4.8 2.4 8.7 7 10.1 11.8.8 2.6 1 58.2.8 183.5l-.3 179.8-31.7-48.6-31.8-48.6v-130.7c0-84.5.4-132 1-134.3 1.6-5.6 5.1-10 9.9-12.6 4.1-2.1 5.6-2.3 21.3-2.3 14.8 0 17.4.2 20.7 2z" />
-    <path d="m784.3 945.1c-3.5 2.2-4.6 3.7-1.5 2 2.2-1.3 5.8-4 5.2-4.1-.3 0-2 1-3.7 2.1zm-6.9 4.5c-1.8 1.4-1.8 1.5.4.4 1.2-.6 2.2-1.3 2.2-1.5 0-.8-.5-.6-2.6 1.1zm-5 3c-1.8 1.4-1.8 1.5.4.4 1.2-.6 2.2-1.3 2.2-1.5 0-.8-.5-.6-2.6 1.1zm-5 3c-1.8 1.4-1.8 1.5.4.4 1.2-.6 2.2-1.3 2.2-1.5 0-.8-.5-.6-2.6 1.1zm-7.6 4c-3.8 2-3.6 2.8.2.9 1.7-.9 3-1.8 3-2 0-.7-.1-.6-3.2 1.1z" />
+    <title>Hrev Dev</title>
+    <defs>
+      <linearGradient id="hrev-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#3b82f6" />
+        <stop offset="50%" stopColor="#8b5cf6" />
+        <stop offset="100%" stopColor="#ec4899" />
+      </linearGradient>
+    </defs>
+    <rect x="10" y="20" width="15" height="60" rx="2" fill="url(#hrev-gradient)" />
+    <rect x="30" y="35" width="15" height="45" rx="2" fill="url(#hrev-gradient)" />
+    <rect x="50" y="25" width="15" height="55" rx="2" fill="url(#hrev-gradient)" />
+    <rect x="70" y="40" width="15" height="40" rx="2" fill="url(#hrev-gradient)" />
+    <circle cx="50" cy="15" r="8" fill="url(#hrev-gradient)" />
   </svg>
 );
 
-const TurborepoLogo = (props: ComponentProps<'svg'>) => (
-  <svg
-    fill="none"
-    viewBox="0 0 36 36"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    {...props}
+const FloatingIcon = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
+  <div 
+    className="absolute animate-bounce opacity-20 pointer-events-none"
+    style={{ 
+      animationDelay: `${delay}s`,
+      animationDuration: '3s'
+    }}
   >
-    <title>Turborepo</title>
-    <linearGradient
-      id="a"
-      gradientUnits="userSpaceOnUse"
-      x1="19.672"
-      x2="1.96713"
-      y1="2.5292"
-      y2="20.234"
-    >
-      <stop offset="0" stopColor="#0096ff" />
-      <stop offset="1" stopColor="#ff1e56" />
-    </linearGradient>
-    <path
-      d="m17.9856 6.28879c-6.4499 0-11.69727 5.24741-11.69727 11.69721s5.24737 11.6972 11.69727 11.6972c6.4498 0 11.6972-5.2474 11.6972-11.6972s-5.2474-11.69721-11.6972-11.69721zm0 17.75061c-3.3437 0-6.0534-2.7098-6.0534-6.0534s2.7097-6.0534 6.0534-6.0534c3.3436 0 6.0533 2.7098 6.0533 6.0534s-2.7097 6.0534-6.0533 6.0534z"
-      fill="currentColor"
-    />
-    <path
-      clipRule="evenodd"
-      d="m18.9661 4.3674v-4.3674c9.4928.507533 17.0339 8.36667 17.0339 17.9858 0 9.6192-7.5411 17.4762-17.0339 17.9859v-4.3674c7.0749-.5054 12.6774-6.4172 12.6774-13.6185s-5.6025-13.11305-12.6774-13.6184zm-11.29647 22.5493c-1.87548-2.1652-3.08441-4.9229-3.30005-7.9506h-4.36958c.226538 4.2367 1.92122 8.0813 4.57651 11.0415l3.09094-3.0909zm9.33607 9.055v-4.3674c-3.0299-.2157-5.7876-1.4224-7.9528-3.3001l-3.09094 3.091c2.96243 2.6574 6.80704 4.3499 11.04154 4.5765z"
-      fill="url(#a)"
-      fillRule="evenodd"
-    />
-  </svg>
+    {children}
+  </div>
 );
 
 export const Hero = () => (
-  <section className="flex flex-col items-center justify-center gap-6 bg-dashed px-4 py-16 sm:px-16 sm:py-24">
-    <a
-      href="https://x.com/haydenbleasel/status/1929625673586598148"
-      target="_blank"
-      className="inline-flex overflow-hidden w-full sm:w-fit items-center gap-2 rounded-full border bg-background py-1 pr-3 pl-1 text-foreground text-sm leading-6 shadow-xs"
-      rel="noreferrer"
-    >
-      <span className="rounded-full bg-secondary px-2 font-semibold">
-        Update
-      </span>
+  <section className="relative flex flex-col items-center justify-center gap-8 bg-dashed px-4 py-20 sm:px-16 sm:py-32 overflow-hidden">
+    {/* Floating Background Icons */}
+    <FloatingIcon delay={0}>
+      <Code className="w-12 h-12 text-blue-500 absolute -top-10 -left-20" />
+    </FloatingIcon>
+    <FloatingIcon delay={1}>
+      <Palette className="w-10 h-10 text-purple-500 absolute top-20 right-10" />
+    </FloatingIcon>
+    <FloatingIcon delay={2}>
+      <Zap className="w-8 h-8 text-pink-500 absolute -bottom-5 left-1/4" />
+    </FloatingIcon>
+    <FloatingIcon delay={1.5}>
+      <Sparkles className="w-14 h-14 text-indigo-500 absolute top-5 right-1/4" />
+    </FloatingIcon>
+
+    {/* Announcement Badge */}
+    <div className="inline-flex overflow-hidden w-full sm:w-fit items-center gap-2 rounded-full border bg-background/80 backdrop-blur-sm py-1 pr-3 pl-1 text-foreground text-sm leading-6 shadow-lg">
+      <Badge variant="secondary" className="rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white border-0">
+        New
+      </Badge>
       <span className="font-medium truncate">
-        next-forge has been acquired by Vercel
+        🚀 Custom UI Component Library & Pro Templates Available
       </span>
-    </a>
-    <h1 className="max-w-3xl text-balance text-center font-semibold text-4xl leading-tight tracking-tighter! sm:text-5xl md:max-w-4xl md:text-6xl lg:leading-[1.1]">
-      Production-grade{' '}
-      <TurborepoLogo className="pointer-events-none mx-1.5 inline-block h-8 w-auto translate-y-0.5 select-none align-baseline sm:h-[38px] md:h-[48px] md:translate-y-1" />
-      Turborepo template for{' '}
-      <NextLogo className="pointer-events-none mx-1.5 inline-block h-8 w-auto translate-y-0.5 select-none align-baseline sm:h-[38px] md:h-[48px] md:translate-y-1 dark:invert" />
-      Next.js apps
-    </h1>
-    <p className="max-w-xl text-balance text-center text-muted-foreground md:max-w-2xl md:text-lg">
-      A monorepo template designed to have everything you need to build your new
-      SaaS app as thoroughly as possible. Free and open source, forever.
+    </div>
+
+    {/* Main Heading */}
+    <div className="text-center space-y-6">
+      <h1 className="max-w-4xl text-balance text-center font-bold text-5xl leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:leading-[1.1] bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <HrevLogo className="pointer-events-none mx-2 inline-block h-12 w-auto translate-y-1 select-none align-baseline sm:h-16 md:h-20" />
+        Hrev Dev
+      </h1>
+      <h2 className="max-w-3xl text-balance text-center font-semibold text-2xl leading-tight tracking-tight sm:text-3xl md:text-4xl text-foreground">
+        Premium Web Development Agency
+      </h2>
+    </div>
+
+    {/* Subtitle */}
+    <p className="max-w-2xl text-balance text-center text-muted-foreground text-lg md:text-xl leading-relaxed">
+      We craft exceptional digital experiences with cutting-edge technology. 
+      From custom UI components to complete web applications, we bring your vision to life.
     </p>
-    <div className="mx-auto flex w-full max-w-lg flex-col items-center gap-4 sm:flex-row">
-      <Installer />
-      <Button asChild size="lg">
-        <Link href="/docs">Read the docs</Link>
+
+    {/* Feature Pills */}
+    <div className="flex flex-wrap justify-center gap-3 text-sm">
+      <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-800">
+        React & Next.js
+      </Badge>
+      <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950 dark:text-purple-300 dark:border-purple-800">
+        Custom Components
+      </Badge>
+      <Badge variant="outline" className="bg-pink-50 text-pink-700 border-pink-200 dark:bg-pink-950 dark:text-pink-300 dark:border-pink-800">
+        Pro Templates
+      </Badge>
+      <Badge variant="outline" className="bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950 dark:text-indigo-300 dark:border-indigo-800">
+        Turborepo
+      </Badge>
+    </div>
+
+    {/* CTA Buttons */}
+    <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
+      <Button 
+        asChild 
+        size="lg" 
+        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+      >
+        <Link href="/components" className="flex items-center gap-2">
+          Explore Components
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </Link>
       </Button>
+      <Button asChild variant="outline" size="lg" className="border-2 hover:bg-muted/50">
+        <Link href="/templates">
+          View Templates
+        </Link>
+      </Button>
+    </div>
+
+    {/* Stats */}
+    <div className="grid grid-cols-3 gap-8 mt-12 text-center">
+      <div>
+        <div className="font-bold text-2xl text-foreground">50+</div>
+        <div className="text-sm text-muted-foreground">UI Components</div>
+      </div>
+      <div>
+        <div className="font-bold text-2xl text-foreground">20+</div>
+        <div className="text-sm text-muted-foreground">Pro Templates</div>
+      </div>
+      <div>
+        <div className="font-bold text-2xl text-foreground">100%</div>
+        <div className="text-sm text-muted-foreground">TypeScript</div>
+      </div>
     </div>
   </section>
 );

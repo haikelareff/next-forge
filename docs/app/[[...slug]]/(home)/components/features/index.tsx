@@ -1,218 +1,147 @@
-import Image from 'next/image';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { 
+  Palette, 
+  Code2, 
+  Rocket, 
+  Zap, 
+  Shield, 
+  Smartphone,
+  ArrowRight,
+  CheckCircle
+} from 'lucide-react';
+import Link from 'next/link';
 
-import BaseHub from './basehub.svg';
-import BetterStack from './better-stack.svg';
-import Clerk from './clerk.svg';
-import GoogleAnalytics from './google-analytics.svg';
-import Prisma from './prisma.svg';
-import Radix from './radix.svg';
-
-import ReactEmail from './react-email.svg';
-import Sentry from './sentry.svg';
-import Stripe from './stripe.svg';
-import Svix from './svix.svg';
-import Tailwind from './tailwind.svg';
-import TypeScript from './typescript.svg';
-
-import Arcjet from './arcjet.svg';
-import Lucide from './lucide.svg';
-import Neon from './neon.svg';
-import React from './react.svg';
-import Ultracite from './ultracite.svg';
-import Vercel from './vercel.svg';
-
-import { cn } from '@/lib/utils';
-import Cmdk from './cmdk.svg';
-import Liveblocks from './liveblocks.svg';
-import Posthog from './posthog.svg';
-import Recharts from './recharts.svg';
-import Resend from './resend.svg';
-import Zod from './zod.svg';
-
-const rows = [
+const services = [
   {
-    row: [
-      {
-        label: 'BetterStack',
-        src: BetterStack,
-        className: '[animation-delay:-26s] [animation-duration:30s]',
-      },
-      {
-        label: 'Clerk',
-        src: Clerk,
-        className: '[animation-delay:-8s] [animation-duration:30s]',
-      },
-      {
-        label: 'Ultracite',
-        src: Ultracite,
-        className: '[animation-delay:-18s] [animation-duration:30s]',
-      },
-      {
-        label: 'Resend',
-        src: Resend,
-        className: '[animation-delay:-22s] [animation-duration:30s]',
-      },
-    ],
+    icon: Palette,
+    title: 'Custom UI Components',
+    description: 'Beautifully crafted, accessible components built on shadcn/ui with your brand in mind.',
+    features: ['50+ Premium Components', 'Full TypeScript Support', 'Dark Mode Ready', 'Accessibility First'],
+    gradient: 'from-blue-500 to-cyan-500',
+    href: '/components'
   },
   {
-    row: [
-      {
-        label: 'BaseHub',
-        src: BaseHub,
-        className: '[animation-delay:-40s] [animation-duration:40s]',
-      },
-      {
-        label: 'Google Analytics',
-        src: GoogleAnalytics,
-        className: '[animation-delay:-20s] [animation-duration:40s]',
-      },
-      {
-        label: 'Lucide',
-        src: Lucide,
-        className: '[animation-delay:-30s] [animation-duration:40s]',
-      },
-      {
-        label: 'PostHog',
-        src: Posthog,
-        className: '[animation-delay:-35s] [animation-duration:40s]',
-      },
-    ],
+    icon: Code2,
+    title: 'Pro Templates',
+    description: 'Complete application templates ready for production deployment and customization.',
+    features: ['20+ Template Designs', 'Next.js 15 Ready', 'Database Included', 'Auth Pre-configured'],
+    gradient: 'from-purple-500 to-pink-500',
+    href: '/templates'
   },
   {
-    row: [
-      {
-        label: 'Prisma',
-        src: Prisma,
-        className: '[animation-delay:-10s] [animation-duration:40s]',
-      },
-      {
-        label: 'Radix UI',
-        src: Radix,
-        className: '[animation-delay:-32s] [animation-duration:40s]',
-      },
-      {
-        label: 'Arcjet',
-        src: Arcjet,
-        className: '[animation-delay:-22s] [animation-duration:40s]',
-      },
-      {
-        label: 'Liveblocks',
-        src: Liveblocks,
-        className: '[animation-delay:-28s] [animation-duration:40s]',
-      },
-    ],
+    icon: Rocket,
+    title: 'Full-Stack Development',
+    description: 'End-to-end web application development using modern technologies and best practices.',
+    features: ['React & Next.js', 'TypeScript First', 'Database Design', 'API Development'],
+    gradient: 'from-green-500 to-emerald-500',
+    href: '/services/development'
   },
   {
-    row: [
-      {
-        label: 'React Email',
-        src: ReactEmail,
-        className: '[animation-delay:-45s] [animation-duration:45s]',
-      },
-      {
-        label: 'Sentry',
-        src: Sentry,
-        className: '[animation-delay:-23s] [animation-duration:45s]',
-      },
-      {
-        label: 'React',
-        src: React,
-        className: '[animation-delay:-34s] [animation-duration:45s]',
-      },
-      {
-        label: 'CMDK',
-        src: Cmdk,
-        className: '[animation-delay:-39s] [animation-duration:45s]',
-      },
-    ],
+    icon: Zap,
+    title: 'Performance Optimization',
+    description: 'Speed up your applications with advanced optimization techniques and monitoring.',
+    features: ['Core Web Vitals', 'Bundle Analysis', 'SEO Optimization', 'Performance Monitoring'],
+    gradient: 'from-orange-500 to-red-500',
+    href: '/services/optimization'
   },
   {
-    row: [
-      {
-        label: 'Stripe',
-        src: Stripe,
-        className: '[animation-delay:-55s] [animation-duration:60s]',
-      },
-      {
-        label: 'Tailwind CSS',
-        src: Tailwind,
-        className: '[animation-delay:-20s] [animation-duration:60s]',
-      },
-      {
-        label: 'Neon',
-        src: Neon,
-        className: '[animation-delay:-38s] [animation-duration:60s]',
-      },
-      {
-        label: 'Recharts',
-        src: Recharts,
-        className: '[animation-delay:-45s] [animation-duration:60s]',
-      },
-    ],
+    icon: Shield,
+    title: 'Security & Compliance',
+    description: 'Implement robust security measures and ensure compliance with industry standards.',
+    features: ['Security Audits', 'GDPR Compliance', 'Authentication', 'Data Protection'],
+    gradient: 'from-indigo-500 to-blue-500',
+    href: '/services/security'
   },
   {
-    row: [
-      {
-        label: 'TypeScript',
-        src: TypeScript,
-        className: '[animation-delay:-9s] [animation-duration:40s]',
-      },
-      {
-        label: 'Svix',
-        src: Svix,
-        className: '[animation-delay:-28s] [animation-duration:40s]',
-      },
-      {
-        label: 'Vercel',
-        src: Vercel,
-        className: '[animation-delay:-18s] [animation-duration:40s]',
-      },
-      {
-        label: 'Zod',
-        src: Zod,
-        className: '[animation-delay:-33s] [animation-duration:40s]',
-      },
-    ],
-  },
+    icon: Smartphone,
+    title: 'Mobile-First Design',
+    description: 'Responsive designs that work perfectly across all devices and screen sizes.',
+    features: ['Responsive Design', 'PWA Support', 'Touch Optimized', 'Cross-Platform'],
+    gradient: 'from-pink-500 to-rose-500',
+    href: '/services/mobile'
+  }
 ];
 
 export const Features = () => (
-  <section className="dark h-[400px] sm:h-[800px]" id="features">
-    <div
-      aria-hidden="true"
-      className="relative h-full overflow-hidden bg-background py-24 ring-inset sm:py-32"
-    >
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 mx-auto w-full max-w-[90%] text-center">
-        <div className="relative z-10">
-          <p className="mx-auto mt-2 max-w-3xl text-pretty font-semibold text-4xl text-foreground/10 tracking-tight sm:text-5xl md:text-6xl">
-            Built with the best tools for modern developers
-          </p>
-        </div>
+  <section className="py-24 sm:py-32 bg-gradient-to-b from-background to-muted/20" id="services">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Header */}
+      <div className="text-center mb-16">
+        <Badge variant="outline" className="mb-4 bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-800">
+          Our Services
+        </Badge>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          Everything You Need to Build Amazing Web Apps
+        </h2>
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          From custom UI components to full-stack development, we provide comprehensive solutions 
+          for modern web applications using cutting-edge technologies.
+        </p>
       </div>
-      <div className="absolute inset-0 grid grid-cols-1 pt-0 [container-type:inline-size]">
-        {rows.map((rowData, index) => (
-          <div className="group relative" key={index}>
-            <div className="absolute inset-x-0 top-1/2 h-0.5 bg-[length:12px_100%] bg-gradient-to-r from-[2px] from-background/15 to-[2px] dark:from-foreground/15" />
-            <div className="absolute inset-x-0 bottom-0 h-0.5 bg-[length:12px_100%] bg-gradient-to-r from-[2px] from-background/5 to-[2px] group-last:hidden dark:from-foreground/5" />
-            {rowData.row.map((logo, _logoIndex) => (
-              <div
-                key={logo.label}
-                className={cn(
-                  logo.className,
-                  'absolute top-[50px] flex items-center gap-2 whitespace-nowrap px-3 py-1',
-                  'rounded-full bg-gradient-to-t from-50% from-secondary/50 to-secondary/50 ring-1 ring-background/10 ring-inset backdrop-blur-sm dark:from-background/50 dark:to-secondary/50 dark:ring-foreground/10',
-                  '[--move-x-from:-100%] [--move-x-to:calc(100%+100cqw)] [animation-iteration-count:infinite] [animation-name:move-x] [animation-play-state:running] [animation-timing-function:linear]',
-                  'shadow-[0_0_15px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(0,0,0,0.2)]'
-                )}
-              >
-                <Image alt="" src={logo.src} className="size-4" />
-                <span className="font-medium text-foreground text-sm/6">
-                  {logo.label}
-                </span>
-              </div>
-            ))}
+
+      {/* Services Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {services.map((service, index) => {
+          const Icon = service.icon;
+          return (
+            <Card key={index} className="group relative overflow-hidden border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <CardHeader className="pb-4">
+                <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${service.gradient} p-2.5 mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className="w-full h-full text-white" />
+                </div>
+                <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
+                  {service.title}
+                </CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  {service.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button asChild variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <Link href={service.href} className="flex items-center justify-center gap-2">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </div>
+
+      {/* CTA Section */}
+      <div className="text-center">
+        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl p-8 sm:p-12 text-white">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+            Ready to Start Your Project?
+          </h3>
+          <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+            Get in touch with our team to discuss your requirements and see how we can help 
+            bring your vision to life with modern web technologies.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-blue-50">
+              <Link href="/contact">
+                Get Started Today
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+              <Link href="/portfolio">
+                View Our Work
+              </Link>
+            </Button>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   </section>

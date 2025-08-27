@@ -106,9 +106,9 @@ export async function generateMetadata(props: {
 
   if (!params.slug) {
     return {
-      title: 'Production-grade Turborepo template for Next.js apps',
+      title: 'Hrev Dev - Premium Web Development Agency | Custom UI Components & Templates',
       description:
-        "A monorepo template designed to have everything you need to build your new SaaS app as quick as possible. Authentication, billing, analytics, SEO, database ORM and more — it's all here.",
+        "Transform your web applications with Hrev Dev's premium UI components and pro templates. Built on Next.js, TypeScript, and shadcn/ui. Get 50+ components, 20+ templates, and expert development services.",
     };
   }
 

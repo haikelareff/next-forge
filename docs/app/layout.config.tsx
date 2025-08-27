@@ -1,42 +1,45 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
-const Vercel = () => (
+const HrevLogo = () => (
   <svg
-    className="-translate-y-[0.5px] h-[18px] w-[18px] fill-current"
-    fill="none"
-    height="22"
-    viewBox="0 0 235 203"
+    className="h-[24px] w-[24px]"
+    viewBox="0 0 100 100"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <title>Vercel</title>
-    <path d="M117.082 0L234.164 202.794H0L117.082 0Z" fill="currentColor" />
-  </svg>
-);
-
-const Slash = () => (
-  <svg
-    height={16}
-    strokeLinejoin="round"
-    className="size-4 text-[#00000014]"
-    viewBox="0 0 16 16"
-    width={16}
-  >
-    <title>Slash</title>
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M4.01526 15.3939L4.3107 14.7046L10.3107 0.704556L10.6061 0.0151978L11.9849 0.606077L11.6894 1.29544L5.68942 15.2954L5.39398 15.9848L4.01526 15.3939Z"
-      fill="var(--color-border)"
-    />
+    <title>Hrev Dev</title>
+    <defs>
+      <linearGradient id="hrev-nav-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#3b82f6" />
+        <stop offset="50%" stopColor="#8b5cf6" />
+        <stop offset="100%" stopColor="#ec4899" />
+      </linearGradient>
+    </defs>
+    <rect x="10" y="20" width="15" height="60" rx="2" fill="url(#hrev-nav-gradient)" />
+    <rect x="30" y="35" width="15" height="45" rx="2" fill="url(#hrev-nav-gradient)" />
+    <rect x="50" y="25" width="15" height="55" rx="2" fill="url(#hrev-nav-gradient)" />
+    <rect x="70" y="40" width="15" height="40" rx="2" fill="url(#hrev-nav-gradient)" />
+    <circle cx="50" cy="15" r="8" fill="url(#hrev-nav-gradient)" />
   </svg>
 );
 
 export const baseOptions: BaseLayoutProps = {
-  githubUrl: 'https://github.com/vercel/next-forge',
+  githubUrl: 'https://github.com/hrevdev/hrev-dev',
   links: [
     {
       text: 'Home',
       url: '/',
+    },
+    {
+      text: 'Components',
+      url: '/components',
+    },
+    {
+      text: 'Templates',
+      url: '/templates',
+    },
+    {
+      text: 'Services',
+      url: '/services',
     },
     {
       text: 'Docs',
@@ -45,10 +48,14 @@ export const baseOptions: BaseLayoutProps = {
   ],
   nav: {
     title: (
-      <div className="flex items-center gap-2">
-        <Vercel />
-        <Slash />
-        <p className="font-semibold text-lg tracking-tight">next-forge</p>
+      <div className="flex items-center gap-3">
+        <HrevLogo />
+        <div className="flex flex-col">
+          <p className="font-bold text-lg tracking-tight bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            Hrev Dev
+          </p>
+          <p className="text-xs text-muted-foreground -mt-1">Premium UI & Templates</p>
+        </div>
       </div>
     ),
   },
