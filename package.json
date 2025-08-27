@@ -1,8 +1,9 @@
 {
-  "name": "next-forge",
-  "version": "5.0.4",
+  "name": "hrev-ui",
+  "version": "0.0.1",
   "bin": {
-    "next-forge": "dist/index.js"
+    "next-forge": "dist/index.js",
+    "docs": "dist/index.js"
   },
   "files": [
     "dist/index.js"
