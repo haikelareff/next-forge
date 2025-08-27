@@ -1,0 +1,73 @@
+---
+title: UI Showcase
+description: Explore Hrev UI — our curated shadcn/ui components with sensible defaults.
+---
+
+Welcome to Hrev UI. Below are a few of the components we ship and use across projects.
+
+import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/hrev-ui'
+import { Input } from '@/components/ui/input'
+
+## Buttons
+
+<div className="flex gap-3 flex-wrap">
+  <Button>Primary</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Ghost</Button>
+  <Button variant="destructive">Destructive</Button>
+  <Button disabled>Disabled</Button>
+  <Button size="sm">Small</Button>
+  <Button size="lg">Large</Button>
+</div>
+
+## Cards
+
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+  <Card>
+    <CardHeader>
+      <CardTitle>Project Snapshot</CardTitle>
+      <CardDescription>Quick overview of a project metric</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p className="text-2xl font-semibold">98 Lighthouse</p>
+    </CardContent>
+    <CardFooter>
+      <Button variant="outline">View report</Button>
+    </CardFooter>
+  </Card>
+  <Card>
+    <CardHeader>
+      <CardTitle>Newsletter</CardTitle>
+      <CardDescription>Stay in the loop</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <div className="flex gap-2">
+        <Input type="email" placeholder="you@company.com" />
+        <Button>Subscribe</Button>
+      </div>
+    </CardContent>
+  </Card>
+  
+</div>
+
+## Tabs
+
+<Tabs defaultValue="design" className="w-full">
+  <TabsList>
+    <TabsTrigger value="design">Design</TabsTrigger>
+    <TabsTrigger value="dev">Development</TabsTrigger>
+    <TabsTrigger value="ops">Ops</TabsTrigger>
+  </TabsList>
+  <TabsContent value="design">
+    We build clean, accessible interfaces, powered by Tailwind and shadcn/ui.
+  </TabsContent>
+  <TabsContent value="dev">Type-safe, testable code with Next.js, React 19 and modern tooling.</TabsContent>
+  <TabsContent value="ops">Observability, CI/CD and scalable infra from day one.</TabsContent>
+  
+</Tabs>
+
+---
+
+Looking for more? Check out our Pro Templates for production-ready layouts, dashboards, and marketing pages.
+

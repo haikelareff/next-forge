@@ -1,0 +1,7 @@
+{
+  "title": "Hrev Dev",
+  "root": true,
+  "pages": [
+    "docs/index"
+  ]
+}

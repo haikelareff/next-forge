@@ -106,9 +106,9 @@ export async function generateMetadata(props: {
 
   if (!params.slug) {
     return {
-      title: 'Production-grade Turborepo template for Next.js apps',
+      title: 'Hrev Dev — Web development agency',
       description:
-        "A monorepo template designed to have everything you need to build your new SaaS app as quick as possible. Authentication, billing, analytics, SEO, database ORM and more — it's all here.",
+        'We build modern Next.js apps with a rock-solid Turborepo monorepo, battle-tested UI, and pro templates ready to ship.',
     };
   }
 
